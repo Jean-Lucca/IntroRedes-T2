@@ -32,6 +32,14 @@ public class Util {
         return hex;
     }
 
+    public static Integer binToDec(String bin) {
+        return Integer.parseInt(bin, 2);
+    }
+
+    public static char binToASCII(String bin) {
+        return (char) Integer.parseInt(bin, 2);
+    }
+
     public static HashMap<String, String> build8b6tTable() throws IOException {
         File file = new File("table.txt");
         HashMap<String, String> table = new HashMap<String, String>();

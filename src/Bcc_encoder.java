@@ -29,20 +29,6 @@ public class Bcc_encoder {
         return res;
     }
 
-    public static String decode(String hex) {
-        String res = "";
-        String bin = Util.hexToBinary(hex);
-        String[] binArray = new String[bin.length()/8];
-        for( int i = 0; i < binArray.length; i++ ) {
-            binArray[i] = "";
-            for( int j=0; j<8; j++ ) {
-                binArray[i] += bin.charAt(8*i + j);
-            }
-        }
-
-        return res;
-    }
-
     public static char countParity( String bin ) {
         int count = 0;
 
