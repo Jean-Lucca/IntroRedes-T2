@@ -96,5 +96,20 @@ public class Util {
         }
         return count;
     }
+
+    public static char countParity( String bin ) {
+        int count = 0;
+
+        for( int i = 0; i < bin.length(); i++ ) {
+            if( bin.charAt(i) == '1' ) {
+                count++;
+            }
+        }
+        if( count % 2 == 0 ) {
+            return '0';
+        } else {
+            return '1';
+        }
+    }
     
 }

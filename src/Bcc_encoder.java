@@ -11,7 +11,7 @@ public class Bcc_encoder {
 
         for( int i = 0; i < str.length(); i++ ) {
             String aux = Integer.toBinaryString(str.charAt(i)-0);
-            binArray[i] = aux += countParity(aux);
+            binArray[i] = aux += Util.countParity(aux);
         }
 
         for( int i = 0; i < 8; i++ ) {
@@ -19,7 +19,7 @@ public class Bcc_encoder {
             for( int j = 0; j < binArray.length-1; j++ ) {
                 aux += binArray[j].charAt(i);
             }
-            binArray[binArray.length-1] += countParity(aux);
+            binArray[binArray.length-1] += Util.countParity(aux);
         }
 
         for( int j = 0; j < binArray.length; j++ ) {
@@ -28,21 +28,4 @@ public class Bcc_encoder {
 
         return res;
     }
-
-    public static char countParity( String bin ) {
-        int count = 0;
-
-        for( int i = 0; i < bin.length(); i++ ) {
-            if( bin.charAt(i) == '1' ) {
-                count++;
-            }
-        }
-
-        if( count % 2 == 0 ) {
-            return '0';
-        } else {
-            return '1';
-        }
-    }
-
 }
