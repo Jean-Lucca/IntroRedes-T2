@@ -1,7 +1,7 @@
 public class Bcc_decoder {
 
     public static void main(String[] args) {
-        System.out.println(decode("E4CAC9CAE7CB"));
+        System.out.println(decode("E4CAC9CAE7CA"));
     }
     public static String decode(String hex) {
         String res = "";
@@ -14,7 +14,7 @@ public class Bcc_decoder {
             }
         }
 
-        for( int i = 0; i < binArray.length-1; i++ ) {
+        for( int i = 0; i < binArray.length; i++ ) {
             if ( Util.countParity( binArray[i].substring(0,7) ) == '0' && binArray[i].charAt(7) != '0' ) {
                 return "ERRO";
             }
@@ -27,7 +27,8 @@ public class Bcc_decoder {
             for( int j = 0; j < binArray.length-1; j++ ) {
                 aux += binArray[j].charAt(i);
             }
-            if ( Util.countParity( aux ) == '0' && bcc.charAt(i) != '0' ) {
+            
+            if ( Util.countParity( aux ) != bcc.charAt(i) ) {
                 return "ERRO";
             }
         }
