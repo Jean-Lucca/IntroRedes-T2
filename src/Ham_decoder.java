@@ -20,6 +20,7 @@ public class Ham_decoder {
     public static String run(String str, int charIndex) {
         int count = 1;
         ArrayList<String> binArray = new ArrayList<String>();
+
         for( int i =0; i < str.length(); i++ ) {
             if( str.charAt(i) == '1' ) {
                 binArray.add( String.format("%4s", Integer.toBinaryString(count)).replace(' ', '0') );
@@ -38,6 +39,7 @@ public class Ham_decoder {
         }
         
         int check = Util.binToDec(binArray.get(binArray.size()-1));
+        
         if( check == 0 ) {
             return Util.reverse(removeHamming(str));
         } else {
