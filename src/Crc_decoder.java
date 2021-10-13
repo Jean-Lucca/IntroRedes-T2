@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class Crc_decoder {
     public static void main(String[] args) {
-        decode("70875663872E73D", "10011");
+        decode(args[0], args[1]);
     }
 
     public static void decode(String str, String pol) {

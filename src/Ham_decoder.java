@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Ham_decoder {
     public static void main(String[] args) {
-        System.out.println(decode("79961C62B62C69E"));
+        System.out.println(decode(args[0]));
     }
 
     public static String decode(String hex) {

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Ham_encoder {
     public static void main(String[] args) {
-        encode("redes");
+        encode(args[0]);
     }
 
     public static String encode(String str) {
@@ -44,7 +44,7 @@ public class Ham_encoder {
         }
 
         String reversedParity = Util.reverse(binArray.get(binArray.size()-1));
-        removeX(str, reversedParity);
+        str = removeX(str, reversedParity);
         return Util.binaryToHex(Util.reverse(str));
     }
 

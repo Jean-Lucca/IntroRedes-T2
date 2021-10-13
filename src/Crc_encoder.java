@@ -1,6 +1,6 @@
 public class Crc_encoder {
     public static void main(String[] args) {
-        System.out.println(encode("redes","10101"));
+        System.out.println(encode(args[0], args[1]));
     }
 
     public static String encode(String str, String pol) {
@@ -10,7 +10,6 @@ public class Crc_encoder {
             res += Util.binaryToHex(aux) + 
                    Util.binaryToHex(Util.divide(aux+Util.appendNZeros(pol.length()-1), pol));
         }
-        System.out.println(res);
         return res;
     }
 }

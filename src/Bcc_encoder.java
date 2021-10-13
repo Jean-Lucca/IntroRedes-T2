@@ -1,7 +1,7 @@
 public class Bcc_encoder {
 
     public static void main(String[] args) {
-        System.out.println(encode("redes"));
+        System.out.println(encode(args[0]));
     }
 
     public static String encode( String str ) {
