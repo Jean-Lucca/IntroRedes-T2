@@ -13,17 +13,9 @@ public class Ham_encoder {
         for( int i = 0; i < str.length(); i++ ) {
             String aux = Integer.toBinaryString(str.charAt(i)-0);
             binArray[i] = "0" + aux;
-            res += run(hamming(reverse(binArray[i]))).toUpperCase();
+            res += run(hamming(Util.reverse(binArray[i]))).toUpperCase();
         }
         System.out.println(res);
-        return res;
-    }
-
-    public static String reverse(String str) {
-        String res = "";
-        for( int i=str.length()-1; i >= 0; i-- ) {
-            res += str.charAt(i);
-        }
         return res;
     }
 
@@ -51,14 +43,19 @@ public class Ham_encoder {
             binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux));
         }
 
-        int aux = 0;
-        String reversedParity = reverse(binArray.get(binArray.size()-1));
+        String reversedParity = Util.reverse(binArray.get(binArray.size()-1));
+        removeX(str, reversedParity);
+        return Util.binaryToHex(Util.reverse(str));
+    }
+
+    public static String removeX(String str, String reversedParity) {
+        int count = 0;
         for( int i=0; i < str.length(); i++ ) {
             if( str.charAt(i) == 'x' ) {
-                str = str.replaceFirst("x", ""+reversedParity.charAt(aux));
-                aux++;
+                str = str.replaceFirst("x", ""+reversedParity.charAt(count));
+                count++;
             }
         }
-        return Util.binaryToHex(reverse(str));
+        return str;
     }
 }
