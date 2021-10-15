@@ -7,6 +7,7 @@ public class Crc_encoder {
         String res = "";
         for( int i =0; i < str.length(); i++ ) {
             String aux = Integer.toBinaryString(str.charAt(i)-0);
+            //divisao binaria modulo 2
             res += Util.binaryToHex(aux) + 
                    Util.binaryToHex(Util.divide(aux+Util.appendNZeros(pol.length()-1), pol));
         }

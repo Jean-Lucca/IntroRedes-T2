@@ -8,12 +8,12 @@ public class Bcc_encoder {
         String res = "";
         String[] binArray = new String[str.length()+1];
         binArray[binArray.length-1] = "";
-
+        //bit de paridade
         for( int i = 0; i < str.length(); i++ ) {
             String aux = Integer.toBinaryString(str.charAt(i)-0);
             binArray[i] = aux += Util.countParity(aux);
         }
-
+        //bcc
         for( int i = 0; i < 8; i++ ) {
             String aux = "";
             for( int j = 0; j < binArray.length-1; j++ ) {
@@ -21,7 +21,7 @@ public class Bcc_encoder {
             }
             binArray[binArray.length-1] += Util.countParity(aux);
         }
-
+        //monta o resultado
         for( int j = 0; j < binArray.length; j++ ) {
             res += Util.binaryToHex(binArray[j]);
         }

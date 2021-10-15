@@ -56,7 +56,7 @@ public class Util {
         }
         return res;
     }
-
+    //divisao binaria modulo 2
     public static String divide(String a, String b) {
         int aux = b.length();
         String res = a.substring(0, aux);

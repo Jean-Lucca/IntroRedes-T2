@@ -13,7 +13,7 @@ public class Bcc_decoder {
                 binArray[i] += bin.charAt(8*i + j);
             }
         }
-
+        //verifica bit de paridade
         for( int i = 0; i < binArray.length; i++ ) {
             if ( Util.countParity( binArray[i].substring(0,7) ) == '0' && binArray[i].charAt(7) != '0' ) {
                 return "ERRO";
@@ -21,22 +21,20 @@ public class Bcc_decoder {
         }
 
         String bcc = binArray[binArray.length-1];
-
+        //verifica bcc
         for( int i = 0; i < 7; i++) {
             String aux = "";
             for( int j = 0; j < binArray.length-1; j++ ) {
                 aux += binArray[j].charAt(i);
             }
-            
             if ( Util.countParity( aux ) != bcc.charAt(i) ) {
                 return "ERRO";
             }
         }
-
+        //monta o resultado
         for( int i = 0; i < binArray.length-1; i++ ) {
             res += Util.binToASCII(binArray[i].substring(0, 7));
         }
-
         return res;
     }
 }

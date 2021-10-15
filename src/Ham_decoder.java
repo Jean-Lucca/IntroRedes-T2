@@ -43,6 +43,7 @@ public class Ham_decoder {
         if( check == 0 ) {
             return Util.reverse(removeHamming(str));
         } else {
+            //inverte bit na posicao check remove os bits re hamming e retorna
             String res = Util.reverse(removeHamming(replaceXor(str, check-1, (char) ((int) str.charAt(check-1) ^ 1))));
             System.out.println( "ERRO no caractere " +(charIndex+1)+" -> Correcao: "+ Util.binToASCII(res));
             return res;

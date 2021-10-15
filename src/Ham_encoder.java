@@ -40,10 +40,12 @@ public class Ham_encoder {
             for( int j = 0; j < binArray.size()-1; j++ ) {
                 aux += binArray.get(j).charAt(i);
             }
+            //calcula a paridade e adiciona no final do array
             binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux));
         }
 
         String reversedParity = Util.reverse(binArray.get(binArray.size()-1));
+        //substitui os xs pelos bits de paridade
         str = removeX(str, reversedParity);
         return Util.binaryToHex(Util.reverse(str));
     }
