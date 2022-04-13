@@ -8,17 +8,17 @@ public class HamEncoder {
     }
 
     public static String encode(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         String[] binArray = new String[str.length()+1];
         binArray[binArray.length-1] = "";
 
         for( int i = 0; i < str.length(); i++ ) {
             String aux = Integer.toBinaryString(str.charAt(i)-0);
             binArray[i] = "0" + aux;
-            res += run(hamming(Util.reverse(binArray[i]))).toUpperCase();
+            res.append(run(hamming(Util.reverse(binArray[i]))).toUpperCase());
         }
         System.out.println(res);
-        return res;
+        return res.toString();
     }
 
     public static String hamming(String str) {

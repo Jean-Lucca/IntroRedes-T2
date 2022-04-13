@@ -8,7 +8,7 @@ public class CrcDecoder {
     }
 
     public static void decode(String str, String pol) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         LinkedList<Integer> err = new LinkedList<Integer>();
         int count = 1;
         for( int i = 0; i < str.length()/3; i++ ) {
@@ -19,10 +19,10 @@ public class CrcDecoder {
             aux = Util.hexToBinary(aux);
             int check = Util.binToDec(Util.divide(aux, pol));
             if( check == 0 ) {
-                res += Util.binToASCII(aux.substring(0 , aux.length() - pol.length()+1));
+                res.append(Util.binToASCII(aux.substring(0 , aux.length() - pol.length()+1)));
             } else {
                 err.add(count);
-                res += "_";
+                res.append("_");
             }
             count++;
         }

@@ -24,8 +24,8 @@ public class BccDecoder {
 
         String bcc = binArray[binArray.length-1];
         //verifica bcc
-        StringBuilder aux = new StringBuilder();
         for( int i = 0; i < 7; i++) {
+            StringBuilder aux = new StringBuilder();
             for( int j = 0; j < binArray.length-1; j++ ) {
                 aux.append(binArray[j].charAt(i));
             }

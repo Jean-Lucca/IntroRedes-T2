@@ -8,15 +8,15 @@ public class HamDecoder {
     }
 
     public static String decode(String hex) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for( int i = 0; i < hex.length()/3; i++ ) {
             String aux = "";
             for( int j=0; j<3; j++ ) {
                 aux += hex.charAt(3*i + j);
             }
-            res += Util.binToASCII(run(Util.reverse(Util.hexToBinary(aux)),i));
+            res.append(Util.binToASCII(run(Util.reverse(Util.hexToBinary(aux)),i)));
         }
-        return res;
+        return res.toString();
     }
 
     public static String run(String str, int charIndex) {
