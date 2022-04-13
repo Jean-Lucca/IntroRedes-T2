@@ -1,3 +1,5 @@
+package br.pucrs.algorithms;
+
 import java.util.ArrayList;
 
 public class Ham_encoder {

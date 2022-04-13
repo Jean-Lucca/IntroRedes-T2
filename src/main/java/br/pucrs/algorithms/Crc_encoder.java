@@ -1,3 +1,5 @@
+package br.pucrs.algorithms;
+
 public class Crc_encoder {
     public static void main(String[] args) {
         System.out.println(encode(args[0], args[1]));

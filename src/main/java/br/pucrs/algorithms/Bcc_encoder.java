@@ -1,3 +1,5 @@
+package br.pucrs.algorithms;
+
 public class Bcc_encoder {
 
     public static void main(String[] args) {

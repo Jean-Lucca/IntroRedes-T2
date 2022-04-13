@@ -1,3 +1,5 @@
+package br.pucrs.algorithms;
+
 import java.util.LinkedList;
 
 public class Crc_decoder {
