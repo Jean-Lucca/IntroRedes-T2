@@ -25,8 +25,7 @@ public class Util {
     }
 
     public static String intToHex(Integer val) {
-        String hex = Integer.toHexString(val);
-        return hex;
+        return Integer.toHexString(val);;
     }
 
     public static Integer binToDec(String bin) {
