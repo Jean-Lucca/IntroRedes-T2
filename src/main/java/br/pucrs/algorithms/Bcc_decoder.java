@@ -4,6 +4,8 @@ public class Bcc_decoder {
 
     public static void main(String[] args) {
         System.out.println(decode(args[0]));
+
+        
     }
     public static String decode(String hex) {
         String res = "";
