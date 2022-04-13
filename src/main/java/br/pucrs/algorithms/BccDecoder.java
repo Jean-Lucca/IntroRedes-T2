@@ -6,7 +6,7 @@ public class BccDecoder {
         System.err.println(decode(args[0]));
     }
     public static String decode(String hex) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         String bin = Util.hexToBinary(hex);
         String[] binArray = new String[bin.length()/8];
         for( int i = 0; i < binArray.length; i++ ) {
@@ -24,19 +24,19 @@ public class BccDecoder {
 
         String bcc = binArray[binArray.length-1];
         //verifica bcc
+        StringBuilder aux = new StringBuilder();
         for( int i = 0; i < 7; i++) {
-            String aux = "";
             for( int j = 0; j < binArray.length-1; j++ ) {
-                aux += binArray[j].charAt(i);
+                aux.append(binArray[j].charAt(i));
             }
-            if ( Util.countParity( aux ) != bcc.charAt(i) ) {
+            if ( Util.countParity( aux.toString() ) != bcc.charAt(i) ) {
                 return "ERRO";
             }
         }
         //monta o resultado
         for( int i = 0; i < binArray.length-1; i++ ) {
-            res += Util.binToASCII(binArray[i].substring(0, 7));
+            res.append(Util.binToASCII(binArray[i].substring(0, 7)));
         }
-        return res;
+        return res.toString();
     }
 }
