@@ -1,4 +1,13 @@
 # Introdução à redes de computadore - T2
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=coverage)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Jean-Lucca_PUCRS-Error-detection-algorithms&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Jean-Lucca_PUCRS-Error-detection-algorithms)
 
 Descrição
 
