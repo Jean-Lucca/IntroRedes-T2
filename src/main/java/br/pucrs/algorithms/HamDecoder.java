@@ -10,11 +10,11 @@ public class HamDecoder {
     public static String decode(String hex) {
         StringBuilder res = new StringBuilder();
         for( int i = 0; i < hex.length()/3; i++ ) {
-            String aux = "";
+            StringBuilder aux = new StringBuilder();
             for( int j=0; j<3; j++ ) {
-                aux += hex.charAt(3*i + j);
+                aux.append(hex.charAt(3*i + j));
             }
-            res.append(Util.binToASCII(run(Util.reverse(Util.hexToBinary(aux)),i)));
+            res.append(Util.binToASCII(run(Util.reverse(Util.hexToBinary(aux.toString())),i)));
         }
         return res.toString();
     }
