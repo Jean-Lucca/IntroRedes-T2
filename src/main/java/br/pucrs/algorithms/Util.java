@@ -51,11 +51,11 @@ public class Util {
     }
 
     public static String reverse(String str) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for( int i=str.length()-1; i >= 0; i-- ) {
-            res += str.charAt(i);
+            res.append(str.charAt(i));
         }
-        return res;
+        return res.toString();
     }
     //divisao binaria modulo 2
     public static String divide(String a, String b) {
@@ -79,22 +79,22 @@ public class Util {
     }
 
     public static String appendNZeros(int n) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for( int i=0; i < n; i++ ) {
-            res += '0';
+            res.append('0');
         }
-        return res;
+        return res.toString();
     }
 
     public static String xor(String a, String b) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for(int i = 1; i < b.length(); i++) {
             if( a.charAt(i) == b.charAt(i) ) {
-                res += "0";
+                res.append("0");
             } else {
-                res += "1";
+                res.append("1");
             }
         }
-        return res;
+        return res.toString();
     }
 }

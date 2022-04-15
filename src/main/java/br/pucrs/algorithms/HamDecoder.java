@@ -21,7 +21,7 @@ public class HamDecoder {
 
     public static String run(String str, int charIndex) {
         int count = 1;
-        ArrayList<String> binArray = new ArrayList<String>();
+        ArrayList<String> binArray = new ArrayList<>();
 
         for( int i =0; i < str.length(); i++ ) {
             if( str.charAt(i) == '1' ) {
@@ -33,11 +33,11 @@ public class HamDecoder {
         binArray.add("");
 
         for( int i = 0; i < 4; i++ ) {
-            String aux = "";
+            StringBuilder aux = new StringBuilder();
             for( int j = 0; j < binArray.size()-1; j++ ) {
-                aux += binArray.get(j).charAt(i);
+                aux.append(binArray.get(j).charAt(i));
             }
-            binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux));
+            binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux.toString()));
         }
         
         int check = Util.binToDec(binArray.get(binArray.size()-1));
@@ -46,7 +46,7 @@ public class HamDecoder {
             return Util.reverse(removeHamming(str));
         } else {
             //inverte bit na posicao check remove os bits re hamming e retorna
-            String res = Util.reverse(removeHamming(replaceXor(str, check-1, (char) ((int) str.charAt(check-1) ^ 1))));
+            String res = Util.reverse(removeHamming(replaceXor(str, check-1, (char) (str.charAt(check-1) ^ 1))));
             System.out.println( "ERRO no caractere " +(charIndex+1)+" -> Correcao: "+ Util.binToASCII(res));
             return res;
         }
@@ -57,9 +57,7 @@ public class HamDecoder {
     }
 
     public static String replaceXor(String str, int index, char replace){     
-        if(str==null){
-            return str;
-        }else if(index<0 || index>=str.length()){
+        if(str==null || index<0 || index>=str.length() ){
             return str;
         }
         char[] chars = str.toCharArray();

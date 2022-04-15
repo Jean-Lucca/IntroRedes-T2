@@ -27,7 +27,7 @@ public class HamEncoder {
 
     public static String run(String str) {
         int count = 1;
-        ArrayList<String> binArray = new ArrayList<String>();
+        ArrayList<String> binArray = new ArrayList<>();
         for( int i =0; i < str.length(); i++ ) {
             if( str.charAt(i) == '1' ) {
                 binArray.add( String.format("%4s", Integer.toBinaryString(count)).replace(' ', '0') );
@@ -38,12 +38,12 @@ public class HamEncoder {
         binArray.add("");
 
         for( int i = 0; i < 4; i++ ) {
-            String aux = "";
+            StringBuilder aux = new StringBuilder();
             for( int j = 0; j < binArray.size()-1; j++ ) {
-                aux += binArray.get(j).charAt(i);
+                aux.append(binArray.get(j).charAt(i));
             }
             //calcula a paridade e adiciona no final do array
-            binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux));
+            binArray.set(binArray.size()-1, binArray.get(binArray.size()-1)+Util.countParity(aux.toString()));
         }
 
         String reversedParity = Util.reverse(binArray.get(binArray.size()-1));

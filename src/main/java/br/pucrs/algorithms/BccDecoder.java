@@ -3,7 +3,7 @@ package br.pucrs.algorithms;
 public class BccDecoder {
 
     public static void main(String[] args) {
-        System.err.println(decode(args[0]));
+        System.out.println(decode(args[0]));
     }
     public static String decode(String hex) {
         StringBuilder res = new StringBuilder();
